@@ -12,7 +12,7 @@
 % Don't draw a line or print page numbers when a page is empty
 % Pages are two-sided - so margins alternate
 % Chapters start on the righthand side of the page
-
+\pdfoutput=1
 \usepackage{LSST_Observing_Strategy_White_Paper}
 
 
@@ -23,7 +23,7 @@
 \begin{titlepage}
 \begin{center}
 
-\vspace*{\stretch{3}}
+\vspace*{\stretch{2}}
 
 {\Huge\bfseries\scshape
  Science-Driven Optimization \\ \vspace{\baselineskip}
@@ -31,23 +31,14 @@
 
 \vspace*{\stretch{2}}
 
-% Version number, to be taken out for published draft
-\include{VersionDate}
-
-% \begin{center}
-% {\Large\bf Version 1.0\\
-%
-% \vspace*{\stretch{0.2}}
-%
-% November 2009}
-% \end{center}
-
 \vspace*{\stretch{2.5}}
 
 {\Large  Prepared by the LSST Science Collaborations,}\\
 \vspace*{\stretch{0.15}}
-{\Large with contributions from the LSST Project. }\\
+{\Large with support from the LSST Project. }\\
 \vspace*{\stretch{1}}
+
+\input{thisversion.tex}
 
 \end{center}
 \end{titlepage}
@@ -66,6 +57,11 @@
 
 \clearemptydoublepage
 \include{preface}
+
+% --------------------------------------------------------------------
+
+\clearemptydoublepage
+\include{summary}
 
 % --------------------------------------------------------------------
 
@@ -109,11 +105,25 @@
 
 % --------------------------------------------------------------------
 
+\include{wfirst}
+
+% --------------------------------------------------------------------
+
 \include{tradeoffs}
 
 % --------------------------------------------------------------------
 
-\bibliographystyle{apj}
+\include{acknowledgments}
+
+% --------------------------------------------------------------------
+
+\appendix
+
+\include{metrics}
+
+% --------------------------------------------------------------------
+
+\bibliographystyle{yahapj}
 \bibliography{references}
 
 % --------------------------------------------------------------------
